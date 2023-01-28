@@ -25,7 +25,7 @@ app.post("/form", async (req, res) => {
     // console.log("route /form");
     // console.log("FIRSTNAME===>", req.body);
     const messageData = {
-      from: `${req.body.firsname} ${req.body.lastname} <${req.body.email}>`,
+      from: `${req.body.firstname} ${req.body.lastname} <${req.body.email}>`,
       to: "simon.m.jordan@gmail.com",
       subject: req.body.subject,
       text: req.body.message,
@@ -39,7 +39,7 @@ app.post("/form", async (req, res) => {
 
     //
   } catch (error) {
-    res.status(400).json(error);
+    res.status(400).json({ message: error.message });
   }
 });
 
