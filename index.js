@@ -37,9 +37,11 @@ app.post("/form", async (req, res) => {
       messageData
     );
 
+    res.json({ message: "email envoyé avec succès !" });
+
     //
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json(error.message);
   }
 });
 
